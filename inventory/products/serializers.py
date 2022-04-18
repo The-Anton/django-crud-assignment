@@ -14,14 +14,11 @@ class BoxCreateSerializer(ModelSerializer):
     class Meta:
         model = Box
         fields = (
-            "id",
             "length",
             "width",
             "height",
             "area",
             "volume",
-            "created_by",
-            "last_updated",
         )
         extra_kwargs = {
             "id": {"read_only": True},
