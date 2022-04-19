@@ -12,7 +12,12 @@ from rest_framework.mixins import (
 from rest_framework import status
 
 from products.models import Box
-from products.permission import BOX_DELETION_ERROR_MSG, IsAuthenticated, StaffPermission, PermissionManager
+from products.permission import (
+    BOX_DELETION_ERROR_MSG,
+    IsAuthenticated,
+    StaffPermission,
+    PermissionManager,
+)
 from products.serializers import BoxCreateSerializer, BoxSerializer, StaffBoxSerializer
 from products.utils import BoxFilter, MyCustomExcpetion, is_constraint_valid, parse_body
 
@@ -43,6 +48,9 @@ class StaffBoxView(
 
     queryset = Box.objects.all()
     serializer_class = StaffBoxSerializer
+
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = BoxFilter
 
     def get_queryset(self):
         return Box.objects.filter(created_by=self.request.user)

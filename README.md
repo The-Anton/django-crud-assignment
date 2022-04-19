@@ -1,5 +1,21 @@
 # Django CRUD Assignment
 
+## Credentials
+
+Staff User - 
+
+```
+username - superuser
+password - superuser
+```
+
+Normal User - 
+
+```
+username - normaluser
+password - user123!@#
+```
+
 Available endpoints - 
 
 
@@ -12,7 +28,7 @@ Available endpoints -
 
 Staff is user having staff permissions.
 
-### *Note - You need to provide auth credentials to call these endpoint
+### *Note - You need to provide auth credentials to call these endpoint and filter your results
 
 ## Neccessary Steps - 
 
